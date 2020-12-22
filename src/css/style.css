@@ -311,7 +311,7 @@ section {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 750px) {
   #keys li {
     font-size: 0.5em;
   }
@@ -321,7 +321,7 @@ section {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .header h1 {
     font-size: 50px;
   }
@@ -342,7 +342,7 @@ section {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   #keys li {
     font-size: 0.4em;
   }

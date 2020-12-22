@@ -2,11 +2,9 @@ import Freqs from './Freqs.js';
 import Keys from './Keys.js';
 
 function initAudio() {
-  try {
-    ctx = new(window.AudioContext || window.webkitAudioContext)();
-  } catch (e) {
-    alert('web audio api not supported in this browser!');
-  }
+  let AudioContext = window.AudioContext || window.webkitAudioContext || false;
+  if (AudioContext) ctx = new AudioContext;
+  else alert('web audio api not supported in this browser. try chrome? :(');
 }
 
 class Synth {
