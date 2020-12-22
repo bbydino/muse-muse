@@ -1,0 +1,361 @@
+@import url(fontawesome.css);
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+
+/* Basic */
+
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+body:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/kiryu.jpg');
+  background-size: 33.33333vw;
+  z-index: -1;
+}
+
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  margin: 0px 10px;
+  padding: 0;
+}
+
+label {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1:hover {
+  color: #69df9c;
+  text-shadow: 1.5px 1.5px 0px #df93df;
+}
+
+h2 {
+  color: #fff;
+  letter-spacing: 0.25px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.25px;
+}
+
+img {
+  width: 100%;
+  overflow: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: auto;
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  margin: 2%;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+section {
+  padding-bottom: 50px;
+}
+
+/* HEADER */
+
+.header {
+  font-size: 69px;
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+}
+
+.header h1 {
+  font-weight: 200;
+  margin: 0px 10px;
+  padding: 0;
+  color: #df93df;
+  text-shadow: 1.5px 1.5px 0px #69df9c;
+}
+
+/* CONTROLS */
+
+.controls {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  padding: 0 10px 20px 10px;
+  ;
+}
+
+.control-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  padding: 0;
+}
+
+#control-box-range {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#reset-btn {
+  color: #000;
+  background-image: linear-gradient(45deg, #ffe7e7 0%, #ffb700 100%);
+  border-radius: 10px;
+  align-self: stretch;
+}
+
+.controls [type='radio'] {
+  /* hide radio buttons */
+  display: none;
+}
+
+.controls [type='radio']:checked+label {
+  /* selected waveform color */
+  background-image: linear-gradient(90deg, #ffff00 0%, #00fff7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.controls .range {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  padding: 0;
+}
+
+.controls .range label {
+  display: inline-block;
+  min-width: 8ch;
+}
+
+/* KEYBOARD */
+
+.keyboard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  user-select: none;
+  margin: auto;
+  padding: 0 10px 20px 10px;
+}
+
+#keys {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 0 0 5px 5px;
+  background-image: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+}
+
+#keys li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  text-align: center;
+  list-style: none;
+  position: relative;
+  float: left;
+}
+
+#keys .white {
+  height: 16em;
+  width: 4em;
+  z-index: 1;
+  color: #000;
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-radius: 0 0 5px 5px;
+  box-shadow: -1px 0 0 #ffffffcc inset, 0 0 5px #ccc inset, 0 0 3px #00000033;
+  background: linear-gradient(to bottom, #eee 0%, #fff 100%);
+}
+
+#keys .black {
+  height: 9em;
+  width: 2em;
+  margin: 0 0 0 -1em;
+  z-index: 2;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 0 0 3px 3px;
+  box-shadow: -1px -1px 2px #ffffff33 inset, 0 -5px 2px 3px #00000099 inset, 0 2px 4px #00000080;
+  background: linear-gradient(45deg, #222 0%, #555 100%);
+}
+
+#keys .d,
+#keys .e,
+#keys .g,
+#keys .a,
+#keys .b {
+  /* keys with black keys on their left */
+  margin: 0 0 0 -1em;
+}
+
+#keys .white.active {
+  color: #fff;
+  border-top: 1px solid #777;
+  border-left: 1px solid #999;
+  border-bottom: 1px solid #999;
+  box-shadow: 2px 0 3px #0000001a inset, -5px 5px 20px #00000033 inset, 0 0 3px #00000033;
+  /* background: linear-gradient(to bottom, #a6ffb4 0%, #affffc 100%); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#keys .black.active {
+  color: #000;
+  box-shadow: -1px -1px 2px #ffffff33 inset, 0 -2px 2px 3px #00000099 inset, 0 1px 2px #00000080;
+  background: linear-gradient(to top, #484848 0%, #373737 100%);
+}
+
+#keys ul li:first-child {
+  border-radius: 5px 0 5px 5px
+}
+
+#keys ul li:last-child {
+  border-radius: 0 5px 5px 5px
+}
+
+/* FOOTER */
+
+.footer {
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}
+
+.social-network ul li a:hover {
+  background-image: linear-gradient(90deg, #00ffcc 0%, #ffb700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.copyright-text a:hover {
+  text-decoration: underline;
+  background-image: linear-gradient(45deg, #a200ff 0%, #00ffcc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* SHRINK/ENLARGE KEYBOARD */
+
+@media (max-width: 1200px) {
+  #keys li {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 1000px) {
+  #keys li {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 720px) {
+  #keys li {
+    font-size: 0.5em;
+  }
+
+  .header h1 {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 50px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  #keys [data-note*="0"] {
+    /* hide all notes in octave 0, still keyboard type-able */
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #keys li {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 450px) {
+  #keys li {
+    font-size: 0.4em;
+  }
+}
+
+@media (max-width: 300px) {
+  #keys li {
+    font-size: 0.3em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #keys li {
+    font-size: 1.0em;
+  }
+}

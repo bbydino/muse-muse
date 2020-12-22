@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>muse muse</title>
+
+  <link rel="stylesheet" href="./src/css/style.css" />
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+    integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
+
+  <!-- ROUND SLIDER JQUERY AND CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="./src/js/roundslider.js"></script>
+  <link rel="stylesheet" href="./src/css/roundslider.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <section class="header">
+      <h1>muse muse</h1>
+      <p>brought to you by bbydino</p>
+    </section>
+
+    <form class="controls">
+      <div class="control-box" id="control-box-waveform">
+        <input type="radio" id="waveform-sine" name="waveform" data-control="wave" value="sine" checked />
+        <label for="waveform-sine">sine</label>
+        <input type="radio" id="waveform-triangle" name="waveform" data-control="wave" value="triangle" />
+        <label for="waveform-triangle">triangle</label>
+        <input type="radio" id="waveform-square" name="waveform" data-control="wave" value="square" />
+        <label for="waveform-square">square</label>
+        <input type="radio" id="waveform-sawtooth" name="waveform" data-control="wave" value="sawtooth" />
+        <label for="waveform-sawtooth">sawtooth</label>
+      </div>
+      <div class="control-box" id="control-box-range">
+        <div class="range">
+          <label for="pitch">pitch</label>
+          <input name="pitch" id="pitch" type="range" data-control="pitch" min="0" max="8" value="4" />
+        </div>
+        <div class="range">
+          <label for="attack">attack</label>
+          <input type="range" name="attack" id="attack" type="range" data-control="attack" min="0" max="2" step="0.05"
+            value="0" />
+        </div>
+        <div class="range">
+          <label for="decay">decay</label>
+          <input type="range" name="decay" id="decay" type="range" data-control="decay" min="0" max="5" step="0.1"
+            value="0" />
+        </div>
+        <div class="range">
+          <label for="sustain">sustain</label>
+          <input type="range" name="sustain" id="sustain" type="range" data-control="sustain" min="0" max="100"
+            value="50" />
+        </div>
+        <div class="range">
+          <label for="release">release</label>
+          <input type="range" name="release" id="release" type="range" data-control="release" min="0" max="10"
+            step="0.1" value="0" />
+        </div>
+      </div>
+    </form>
+
+    <section class="keyboard">
+      <ul id="keys">
+        <!-- octave 0 -->
+        <li class="white c" data-note="c0">
+          <span>Z</span><span>C</span></li>
+        <li class="black cs" data-note="cs0">
+          <span>S</span><span>C#</span></li>
+        <li class="white d" data-note="d0">
+          <span>X</span><span>D</span></li>
+        <li class="black ds" data-note="ds0">
+          <span>D</span><span>D#</span></li>
+        <li class="white e" data-note="e0">
+          <span>C</span><span>E</span></li>
+        <li class="white f" data-note="f0">
+          <span>V</span><span>F</span></li>
+        <li class="black f#" data-note="fs0">
+          <span>G</span><span>F#</span></li>
+        <li class="white g" data-note="g0">
+          <span>B</span><span>G</span></li>
+        <li class="black gs" data-note="gs0">
+          <span>H</span><span>G#</span></li>
+        <li class="white a" data-note="a0">
+          <span>N</span><span>A</span></li>
+        <li class="black as" data-note="as0">
+          <span>J</span><span>A#</span></li>
+        <li class="white b" data-note="b0">
+          <span>M</span><span>B</span></li>
+        <!-- octave 1 -->
+        <li class="white c" data-note="c1">
+          <span>, Q</span><span>C</span></li>
+        <li class="black cs" data-note="cs1">
+          <span>L 2</span><span>C#</span></li>
+        <li class="white d" data-note="d1">
+          <span>. W</span><span>D</span></li>
+        <li class="black ds" data-note="ds1">
+          <span>; 3</span><span>D#</span></li>
+        <li class="white e" data-note="e1">
+          <span>/ E</span><span>E</span></li>
+        <li class="white f" data-note="f1">
+          <span>R</span><span>F</span></li>
+        <li class="black f#" data-note="fs1">
+          <span>5</span><span>F#</span></li>
+        <li class="white g" data-note="g1">
+          <span>T</span><span>G</span></li>
+        <li class="black gs" data-note="gs1">
+          <span>6</span><span>G#</span></li>
+        <li class="white a" data-note="a1">
+          <span>Y</span><span>A</span></li>
+        <li class="black as" data-note="as1">
+          <span>7</span><span>A#</span></li>
+        <li class="white b" data-note="b1">
+          <span>U</span><span>B</span></li>
+        <!-- octave 2 -->
+        <li class="white c" data-note="c2">
+          <span>I</span><span>C</li>
+        <li class="black cs" data-note="cs2">
+          <span>9</span><span>C#</span></li>
+        <li class="white d" data-note="d2">
+          <span>O</span><span>D</span></li>
+        <li class="black ds" data-note="ds2">
+          <span>0</span><span>D#</span></li>
+        <li class="white e" data-note="e2">
+          <span>P</span><span>E</span></li>
+        <li class="white f" data-note="f2">
+          <span>[</span><span>F</span></li>
+      </ul>
+    </section>
+
+    <section class="footer">
+      <div class="social-network">
+        <ul class="soial-icons">
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/bbydino" target="blank"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/bbydino/" target="blank"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCTwC-PFmfAUMYmHUl1r_cZw" target="blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://soundcloud.com/bbydinobeats" target="blank"><i class="fab fa-soundcloud"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright-text">
+        <p><a href="#" target="blank">Hope u like it!&lt;3</a></p>
+        <p><a href="https://github.com/bbydino/muse-muse" target="blank">code: LINK</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="./src/js/script.js"></script>
+</body>
+
+</html>
