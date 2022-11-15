@@ -50,7 +50,7 @@ class Synth {
     osc.connect(attack);
 
     // attack config
-    attack.gain.setValueAtTime(0.0001, ctx.currentTime);
+    attack.gain.setValueAtTime(this.threshold, ctx.currentTime);
     attack.gain.exponentialRampToValueAtTime(this.gain, ctx.currentTime + Math.max(this.threshold, this.attack));
     attack.connect(decay);
 
